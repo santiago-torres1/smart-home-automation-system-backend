@@ -40,7 +40,7 @@ mqttClient.on('message', (topic, message) => {
         console.error('Failed to parse message', error);
         return;
     }
-    const query = 'INSERT INTO sensor_data (sensor_type, value, timestamp) VALUES (?, ?, ?)';
+    const query = 'INSERT INTO door_sensor_data (sensor_type, value, timestamp) VALUES (?, ?, ?)';
     const values = ['door', sensorData.state === 'ON' ? 'open' : 'closed', new Date()];
     dbConnection.execute(query, values, (err, results, fields) => {
         if (err) {
