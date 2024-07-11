@@ -1,9 +1,9 @@
 const mqtt = require('mqtt');
 const mysql = require('mysql2');
 
-const mqttBrokerUrl = 'mqtt://localhost:1883';
+const mqttBrokerUrl = 'mqtt://10.0.0.175:1883';
 const mqttOptions = {
-    username: 'admin',
+    username: 'mqtt',
     password: 'Conestoga'
 };
 
