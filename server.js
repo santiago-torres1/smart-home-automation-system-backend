@@ -41,8 +41,8 @@ mqttClient.on('message', (topic, message) => {
         return;
     }
     const query = 'INSERT INTO door_sensor_data (sensor_type, value, timestamp) VALUES (?, ?, ?)';
-    console.log(sensorData);
-    const values = ['door', sensorData.contact == 'true' ? 'closed' : 'open', new Date()];
+    console.log(sensorData.contact);
+    const values = ['door', sensorData.contact ? 'closed' : 'open', new Date()];
     dbConnection.execute(query, values, (err, results, fields) => {
         if (err) {
             console.error('Failed to insert data into database', err);
