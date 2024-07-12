@@ -41,6 +41,7 @@ mqttClient.on('message', (topic, message) => {
         return;
     }
     const query = 'INSERT INTO door_sensor_data (sensor_type, value, timestamp) VALUES (?, ?, ?)';
+    console.log(sensorData);
     const values = ['door', sensorData.state === 'ON' ? 'open' : 'closed', new Date()];
     dbConnection.execute(query, values, (err, results, fields) => {
         if (err) {
