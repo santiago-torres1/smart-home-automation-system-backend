@@ -1,13 +1,13 @@
 const mqtt = require('mqtt');
 const mysql = require('mysql2');
 
-const mqttBrokerUrl = 'mqtt://10.0.0.176:1883';
+const mqttBrokerUrl = 'mqtt://10.0.0.175:1883';
 const mqttOptions = {
     username: 'mqtt',
     password: 'Conestoga'
 };
 
-const doorSensorTopic = 'zigbee2mqtt/door_basement'; 
+const doorSensorTopic = 'zigbee2mqtt/door_sensor_01'; 
 
 const dbConfig = {
     host: 'semm.cn2isckwenn7.ca-central-1.rds.amazonaws.com',
